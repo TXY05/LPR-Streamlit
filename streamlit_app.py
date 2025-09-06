@@ -34,7 +34,7 @@ def collect_all_images(dir_test):
 
 @st.cache_resource
 def load_fasterrcnn(weights_path, model_name, device):
-    checkpoint = torch.load(weights_path, map_location=device)
+    checkpoint = torch.load(weights_path, map_location=device,weights_only=False)
     NUM_CLASSES = checkpoint['config']['NC']
     CLASSES = checkpoint['config']['CLASSES']
     try:
@@ -49,7 +49,7 @@ def load_fasterrcnn(weights_path, model_name, device):
 # ---------------------------
 # YOLO helpers
 # ---------------------------
-YOLO_WEIGHTS = "yolo/best.pt"
+YOLO_WEIGHTS = "model/yolo/best.pt"
 
 @st.cache_resource
 def load_yolo():
