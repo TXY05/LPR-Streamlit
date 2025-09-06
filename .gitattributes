@@ -1,0 +1,2 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+model/faster-rcnn/best_model.pth filter=lfs diff=lfs merge=lfs -text
