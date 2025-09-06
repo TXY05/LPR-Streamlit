@@ -10,7 +10,6 @@ from models.create_fasterrcnn_model import create_model
 from utils.annotations import inference_annotations
 from utils.general import set_infer_dir
 from utils.transforms import infer_transforms
-
 # ---------------------------
 # Cascade Classifier
 # ---------------------------
