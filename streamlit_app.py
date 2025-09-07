@@ -11,12 +11,12 @@ from utils.annotations import inference_annotations
 from utils.general import set_infer_dir
 from utils.transforms import infer_transforms
 # ---------------------------
-# Cascade Classifier
+# Haar  Cascade Classifier
 # ---------------------------
 CASCADE_PATH = "model/haar/cascade.xml"  # update path
 cascade = cv2.CascadeClassifier(CASCADE_PATH)
 if cascade.empty():
-    st.error(f"Failed to load cascade from {CASCADE_PATH}")
+    st.error(f"Failed to load haar cascade from {CASCADE_PATH}")
     st.stop()
 
 # ---------------------------
@@ -61,7 +61,7 @@ def load_yolo():
 st.title("License Plate Detection")
 st.sidebar.markdown("### Hyperparameter Tuning")
 # Sidebar controls
-with st.sidebar.expander("Cascade Classifier"):
+with st.sidebar.expander("Haar Cascade Classifier"):
     scaleFactor = st.slider("Scale Factor", 1.1, 2.0, 1.1, 0.1)
     minNeighbors = st.slider("Min Neighbors", 1, 10, 5, 1)
     minSize_w = st.slider("Min Width", 10, 200, 50, 10)
@@ -108,9 +108,9 @@ if uploaded_files:
             st.warning(f"Could not decode {uploaded_file.name}")
 
     # =======================
-    # Cascade Section
+    # Haar Cascade Section
     # =======================
-    st.header("Cascade Classifier Results")
+    st.header("Haar Cascade Classifier Results")
     for name, image in images_data:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         start_time = time.time()
