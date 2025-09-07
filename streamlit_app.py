@@ -59,7 +59,7 @@ def load_yolo():
 # Streamlit App
 # ---------------------------
 st.title("License Plate Detection")
-
+st.sidebar.markdown("### Hyperparameter Tuning")
 # Sidebar controls
 with st.sidebar.expander("Cascade Classifier"):
     scaleFactor = st.slider("Scale Factor", 1.1, 2.0, 1.1, 0.1)
