@@ -126,7 +126,7 @@ if uploaded_files:
 
         st.image(cv2.cvtColor(img_copy, cv2.COLOR_BGR2RGB),
                  caption=f"{name} | {len(detections)} detections | FPS: {fps:.2f}",
-                 use_container_width=True)
+                 width='stretch')
 
     # =======================
     # Faster R-CNN Section
@@ -149,7 +149,7 @@ if uploaded_files:
 
         st.image(cv2.cvtColor(img_copy, cv2.COLOR_BGR2RGB),
                  caption=f"{name} | FPS: {fps:.2f}",
-                 use_container_width=True)
+                 width='stretch')
 
     # =======================
     # YOLO Section
@@ -164,5 +164,5 @@ if uploaded_files:
 
         st.image(cv2.cvtColor(yolo_img, cv2.COLOR_BGR2RGB),
                  caption=f"{name} | FPS: {fps:.2f}",
-                 use_container_width=True)
+                 width='stretch')
 
